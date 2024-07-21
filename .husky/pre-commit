@@ -1,0 +1,4 @@
+npx lint-staged
+
+npm version --no-git-tag-version --force patch
+git add package.json package-lock.json
