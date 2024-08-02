@@ -1,6 +1,6 @@
 import styles from './DesktopNavBar.module.scss';
 
-export default function NavBar() {
+export default function DesktopNavBar() {
   return (
     <div className={styles.desktopNavBar}>
       <div className={styles.desktopNavBarContainer}>

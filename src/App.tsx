@@ -1,18 +1,12 @@
 import './App.scss';
 import OpenView from './components/openView/OpenView';
-import NavBarDesktop from './components/navBar/DesktopNavBar';
-import MobileNavBar from './components/navBar/MobileNavBar';
-import useViewport from './hooks/useViewport';
-
-const MOBILE_BREAKPOINT = 600;
+import NavBar from './components/navBar/NavBar';
 
 function App() {
-  const { width } = useViewport();
-
   return (
     <>
       <OpenView />
-      {width > MOBILE_BREAKPOINT ? <NavBarDesktop /> : <MobileNavBar />}
+      <NavBar />
       <div style={{ backgroundColor: 'lightgray', height: 3000 }} />
     </>
   );
