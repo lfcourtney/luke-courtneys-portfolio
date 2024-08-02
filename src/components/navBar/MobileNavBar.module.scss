@@ -1,0 +1,53 @@
+.mobileNavBar {
+  background-color: #222222;
+  color: white;
+}
+
+.mobileNavBarHamburgerContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 17px 25px 17px 17px;
+  position: relative;
+}
+
+.mobileNavBarFooter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0673e8;
+  height: 3px;
+  width: 100%;
+}
+
+.hamburgerIcon {
+  margin-left: auto;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.mobileNavBarMenu {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileNavBarMenuContainer {
+  background-color: #222222;
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.mobileNavBarListItem {
+  padding: 10px 20px;
+  transition: color 0.5s;
+  cursor: pointer;
+  &:hover {
+    color: #b91c5f;
+  }
+}

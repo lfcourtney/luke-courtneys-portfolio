@@ -1,0 +1,47 @@
+.container {
+  height: 100vh;
+  background-color: #0673e8;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.containerChild {
+  display: block;
+}
+
+.header {
+  font-size: 4em;
+}
+
+.horizontalRule {
+  border-top: none;
+  border-color: white;
+  opacity: 0.4;
+}
+
+.subHeader {
+  font-size: 1.8em;
+  margin: 10px 0;
+}
+
+.chevronDown {
+  cursor: pointer;
+  font-size: 4em;
+  animation: downChevronIdle 1s linear alternate infinite;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+@keyframes downChevronIdle {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-7px);
+  }
+}
