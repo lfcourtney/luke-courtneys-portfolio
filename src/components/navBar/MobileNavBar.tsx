@@ -1,9 +1,10 @@
+import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import styles from './MobileNavBar.module.scss';
 
 interface MobileNavBarProps {
   hamburgerOpen: boolean;
-  respondHamburgerClick: () => void;
+  hamburgerMenuComponent: React.ReactElement;
 }
 
 const hamburgerItemVariants: Variants = {
@@ -19,15 +20,12 @@ const hamburgerItemVariants: Variants = {
 
 export default function MobileNavBar({
   hamburgerOpen,
-  respondHamburgerClick,
+  hamburgerMenuComponent,
 }: MobileNavBarProps) {
   return (
     <div className={styles.mobileNavBar}>
       <div className={styles.mobileNavBarHamburgerContainer}>
-        <i
-          onClick={respondHamburgerClick}
-          className={['fas', 'fa-bars', styles.hamburgerIcon].join(' ')}
-        ></i>
+        {hamburgerMenuComponent}
         <div className={styles.mobileNavBarFooter}></div>
       </div>
       <motion.div

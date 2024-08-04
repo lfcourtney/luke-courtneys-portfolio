@@ -1,0 +1,21 @@
+$barWidth: 35px;
+$barHeight: 5px;
+$hamburgerGap: 6px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $hamburgerGap;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.hamburgerMenu,
+.hamburgerMenuTop,
+.hamburgerMenuBottom {
+  width: $barWidth;
+  height: $barHeight;
+  background-color: white;
+  border-radius: 2px;
+  transform-origin: left center;
+}

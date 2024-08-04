@@ -2,6 +2,7 @@ import { useState } from 'react';
 import useViewport from '../../hooks/useViewport';
 import DesktopNavBar from './DesktopNavBar';
 import MobileNavBar from './MobileNavBar';
+import HamburgerMenu from './HamburgerMenu';
 
 const MOBILE_BREAKPOINT = 600;
 
@@ -20,7 +21,12 @@ function NavBar() {
       ) : (
         <MobileNavBar
           hamburgerOpen={hamburgerOpen}
-          respondHamburgerClick={respondHamburgerClick}
+          hamburgerMenuComponent={
+            <HamburgerMenu
+              onClick={respondHamburgerClick}
+              hamburgerOpen={hamburgerOpen}
+            />
+          }
         />
       )}
     </>
