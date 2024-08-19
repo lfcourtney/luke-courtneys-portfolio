@@ -1,0 +1,114 @@
+.bold {
+  font-weight: bold;
+}
+
+.boldMargin {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  padding-top: 80px;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+.subHeader {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2em;
+}
+
+.horizontalRule {
+  border-top: none;
+  margin: 30px auto;
+  width: 96%;
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+
+.iconLink {
+  display: inline-block;
+  margin: 0 5px;
+  &:first-of-type {
+    margin: 0 5px 0 0;
+  }
+  &:last-of-type {
+    margin: 0 0 0 5px;
+  }
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+}
+
+.gridItem {
+  padding: 0 20px;
+  /* It is very important the width is 100%. This is due to how text behaves in a flexbox container. If width is not set to 100%, it will be auto, and auto for 
+  text is display block, which means the text will try to fill up all the remaining horizontal space, squishing the items to the right of the text in the flexbox. That is, the
+  text will not make room for the other items within the flexbox and act as if they do not exist. Thus, width is set to 100% to prevent this. With width set to 100%, the text
+  will take up 100% of the space the flexbox container has allocated to it, spacing the text according to the rules of the flexbox container rather than display block. */
+  width: 100%;
+  h1,
+  p {
+    font-size: 16px;
+  }
+}
+
+.resumePhoto {
+  width: 630px;
+  height: 250px;
+  border-radius: 50%;
+  /* The reason why CSS is used here to insert the image rather than a HTML <img /> tag is because CSS loads the image immediately.
+  If HTML is used, image will flicker into existence when framer motion commits to image animation. But with CSS, the image is already loaded.
+  There will be no flicker.*/
+  background: url('/ResumePhoto.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    max-width: 900px;
+  }
+  .resumePhoto {
+    width: 630px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 920px) {
+  .grid {
+    flex-direction: column;
+  }
+  .gridItem {
+    padding: 40px 20px;
+  }
+  .resumePhoto {
+    width: 230px;
+    height: 230px;
+  }
+}
