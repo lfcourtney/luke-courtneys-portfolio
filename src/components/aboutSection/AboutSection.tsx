@@ -2,11 +2,11 @@ import styles from './AboutSection.module.scss';
 import { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';
 
-const DURATION_TIME = 0.5;
+const DURATION_TIME: number = 0.5;
 
 export default function AboutSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, margin: '0px 0px -50% 0px' });
 
   return (
     <motion.div
@@ -14,6 +14,7 @@ export default function AboutSection() {
       animate={isInView ? 'show' : 'hidden'}
       className={styles.container}
       ref={ref}
+      id="aboutSection"
     >
       <motion.h1
         variants={{

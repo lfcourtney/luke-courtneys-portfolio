@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './OpenView.module.scss';
+import ScrollIntoView from 'react-scroll-into-view';
 
 const OpenView = (): React.JSX.Element => {
   return (
@@ -8,14 +9,16 @@ const OpenView = (): React.JSX.Element => {
         <h1 className={styles.header}>Luke Courtney</h1>
         <hr className={styles.horizontalRule} />
         <p className={styles.subHeader}>Portfolio</p>
-        <i
-          className={[
-            'fas',
-            'fa-chevron-down',
-            'fa-4x',
-            styles.chevronDown,
-          ].join(' ')}
-        ></i>
+        <ScrollIntoView selector="#aboutSection">
+          <i
+            className={[
+              'fas',
+              'fa-chevron-down',
+              'fa-4x',
+              styles.chevronDown,
+            ].join(' ')}
+          ></i>
+        </ScrollIntoView>
       </div>
     </div>
   );

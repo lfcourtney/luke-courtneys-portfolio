@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import useViewport from '../../hooks/useViewport';
+import useViewport from '../../hooks/ViewportProvider/useViewport';
 import DesktopNavBar from './DesktopNavBar';
 import MobileNavBar from './MobileNavBar';
 import HamburgerMenu from './HamburgerMenu';
 
-const MOBILE_BREAKPOINT = 600;
+const MOBILE_BREAKPOINT: number = 600;
 
 function NavBar() {
   const { width } = useViewport();
