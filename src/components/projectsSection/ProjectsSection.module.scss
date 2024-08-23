@@ -22,15 +22,3 @@
   background-color: black;
   margin: 0 auto;
 }
-
-.filterContainer {
-  margin: 60px auto 0 auto;
-  width: 600px;
-  position: relative;
-}
-
-@media (max-width: 616px) {
-  .filterContainer {
-    width: 370px;
-  }
-}

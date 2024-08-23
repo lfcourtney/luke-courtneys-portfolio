@@ -109,7 +109,7 @@ export default function AboutSection() {
             className={styles.iconLink}
           >
             <img
-              src="/linkedin.png"
+              src="/icons/linkedin.png"
               alt="linkedin-logo"
               className={styles.icon}
             />
@@ -119,7 +119,11 @@ export default function AboutSection() {
             target="_blank"
             className={styles.iconLink}
           >
-            <img src="/github.png" alt="github-logo" className={styles.icon} />
+            <img
+              src="/icons/github.png"
+              alt="github-logo"
+              className={styles.icon}
+            />
           </a>
           <a
             href="https://www.youtube.com/@lukechopper22/videos"
@@ -127,7 +131,7 @@ export default function AboutSection() {
             className={styles.iconLink}
           >
             <img
-              src="/youtube.png"
+              src="/icons/youtube.png"
               alt="youtube-logo"
               className={styles.icon}
             />

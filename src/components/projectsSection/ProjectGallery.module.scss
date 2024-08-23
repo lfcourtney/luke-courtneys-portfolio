@@ -1,0 +1,19 @@
+.filterContainer {
+  margin: 60px auto 0 auto;
+  width: 600px;
+  position: relative;
+}
+
+@media (max-width: 616px) {
+  .filterContainer {
+    width: 370px;
+  }
+}
+
+.galleryContainer {
+  width: 95%;
+  margin: 20px auto 0 auto;
+  overflow: hidden;
+  height: 900px;
+  position: relative;
+}

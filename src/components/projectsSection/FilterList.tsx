@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react';
 import useViewport from '../../hooks/ViewportProvider/useViewport';
 import { motion, Transition } from 'framer-motion';
 import styles from './FilterList.module.scss';
-
-type FilterListValues = 'all' | 'react' | 'frontend' | 'backend';
+import { FilterListValues } from './ProjectGallery';
 
 const selectorTransition: Transition = {
-  duration: 1,
+  duration: 1.2,
   type: 'spring',
   bounce: 0,
 };
@@ -15,11 +14,18 @@ const selectorCancelTransition: Transition = {
   duration: 0,
 };
 
+interface FilterListInterface {
+  filterValue: FilterListValues;
+  changeFilterValue: (newFilterValue: FilterListValues) => void;
+}
+
 const MOBILE_BREAKPOINT: number = 616;
 
-export default function FilterList() {
+export default function FilterList({
+  filterValue,
+  changeFilterValue,
+}: FilterListInterface) {
   const { width } = useViewport();
-  const [filterValue, setFilterValue] = useState<FilterListValues>('all');
   const [changeWidthBreakpoint, setChangeWidthBreakpoint] = useState(
     width > MOBILE_BREAKPOINT
   );
@@ -40,7 +46,7 @@ export default function FilterList() {
             filterValue === 'all' && styles.filterListItemSelected,
           ].join(' ')}
           onClick={() => {
-            setFilterValue('all');
+            changeFilterValue('all');
           }}
         >
           all
@@ -51,7 +57,7 @@ export default function FilterList() {
             filterValue === 'react' && styles.filterListItemSelected,
           ].join(' ')}
           onClick={() => {
-            setFilterValue('react');
+            changeFilterValue('react');
           }}
         >
           react
@@ -62,7 +68,7 @@ export default function FilterList() {
             filterValue === 'frontend' && styles.filterListItemSelected,
           ].join(' ')}
           onClick={() => {
-            setFilterValue('frontend');
+            changeFilterValue('frontend');
           }}
         >
           frontend
@@ -73,14 +79,14 @@ export default function FilterList() {
             filterValue === 'backend' && styles.filterListItemSelected,
           ].join(' ')}
           onClick={() => {
-            setFilterValue('backend');
+            changeFilterValue('backend');
           }}
         >
           backend
         </li>
       </ul>
       <motion.div
-        initial={false}
+        initial={filterValue}
         animate={filterValue}
         variants={{
           all: {
