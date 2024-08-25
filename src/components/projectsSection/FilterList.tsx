@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import useViewport from '../../hooks/ViewportProvider/useViewport';
 import { motion, Transition } from 'framer-motion';
 import styles from './FilterList.module.scss';
 import { FilterListValues } from './ProjectGallery';
@@ -15,6 +14,7 @@ const selectorCancelTransition: Transition = {
 };
 
 interface FilterListInterface {
+  width: number;
   filterValue: FilterListValues;
   changeFilterValue: (newFilterValue: FilterListValues) => void;
 }
@@ -22,10 +22,10 @@ interface FilterListInterface {
 const MOBILE_BREAKPOINT: number = 616;
 
 export default function FilterList({
+  width,
   filterValue,
   changeFilterValue,
 }: FilterListInterface) {
-  const { width } = useViewport();
   const [changeWidthBreakpoint, setChangeWidthBreakpoint] = useState(
     width > MOBILE_BREAKPOINT
   );
