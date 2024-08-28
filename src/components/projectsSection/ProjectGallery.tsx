@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styles from './ProjectGallery.module.scss';
 import { motion, Transition, Variant } from 'framer-motion';
-import useViewport from '../../hooks/ViewportProvider/useViewport';
+import globalContext from '../../hooks/globalContext';
 import FilterList from './FilterList';
 import GalleryItem from './GalleryItem';
 
@@ -41,7 +41,7 @@ const hideGalleryItemVariant: Variant = {
 export type FilterListValues = 'all' | 'react' | 'frontend' | 'backend';
 
 export default function ProjectGallery({ isInView }: { isInView: boolean }) {
-  const { width } = useViewport();
+  const { width } = useContext(globalContext);
   const [breakpointSize, setBreakpointSize] = useState<BreakpointSize>(
     calculateBreakpointSize(width)
   );

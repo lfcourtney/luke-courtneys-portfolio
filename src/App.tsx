@@ -1,5 +1,5 @@
 import './App.scss';
-import ViewportProvider from './hooks/ViewportProvider/ViewportProvider';
+import GlobalProvider from './hooks/GlobalProvider';
 import OpenView from './components/openView/OpenView';
 import NavBar from './components/navBar/NavBar';
 import AboutSection from './components/aboutSection/AboutSection';
@@ -7,12 +7,12 @@ import ProjectsSection from './components/projectsSection/ProjectsSection';
 
 function App() {
   return (
-    <ViewportProvider>
+    <GlobalProvider>
       <OpenView />
       <NavBar />
       <AboutSection />
       <ProjectsSection />
-    </ViewportProvider>
+    </GlobalProvider>
   );
 }
 
