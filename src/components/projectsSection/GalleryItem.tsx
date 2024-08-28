@@ -1,4 +1,5 @@
-import React from 'react';
+import { useContext } from 'react';
+import globalContext from '../../hooks/globalContext';
 import { motion, Variant, Variants } from 'framer-motion';
 import { FilterListValues } from './ProjectGallery';
 import styles from './GalleryItem.module.scss';
@@ -25,6 +26,8 @@ export default function GalleryItem({
   filterValue,
   variants,
 }: GalleryItemProps) {
+  const { setProjectsSectionModalInfo } = useContext(globalContext);
+
   return (
     <motion.div
       initial={filterValue}
@@ -38,7 +41,19 @@ export default function GalleryItem({
           <h1 className={styles.header}>{title}</h1>
           <p className={styles.paragraph}>{subTitle}</p>
         </div>
-        <div className={styles.btn}>LEARN MORE</div>
+        <div
+          onClick={() =>
+            setProjectsSectionModalInfo({
+              title,
+              link: '',
+              img,
+              text: '',
+            })
+          }
+          className={styles.btn}
+        >
+          LEARN MORE
+        </div>
       </div>
       <img src={img} className={styles.image} alt={title} />
     </motion.div>

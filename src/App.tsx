@@ -1,18 +1,28 @@
-import './App.scss';
-import GlobalProvider from './hooks/GlobalProvider';
+import useModalOverflow from './hooks/useModal';
 import OpenView from './components/openView/OpenView';
 import NavBar from './components/navBar/NavBar';
 import AboutSection from './components/aboutSection/AboutSection';
 import ProjectsSection from './components/projectsSection/ProjectsSection';
+import ProjectsSectionModal from './components/projectsSection/ProjectsSectionModal';
 
 function App() {
+  const { projectsSectionModalInfo } = useModalOverflow();
+
   return (
-    <GlobalProvider>
+    <>
       <OpenView />
       <NavBar />
       <AboutSection />
       <ProjectsSection />
-    </GlobalProvider>
+      {projectsSectionModalInfo && (
+        <ProjectsSectionModal
+          title={projectsSectionModalInfo.title}
+          link={projectsSectionModalInfo.link}
+          img={projectsSectionModalInfo.img}
+          text={projectsSectionModalInfo.text}
+        />
+      )}
+    </>
   );
 }
 
