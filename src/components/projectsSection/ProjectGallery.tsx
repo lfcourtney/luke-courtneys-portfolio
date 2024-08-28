@@ -47,6 +47,11 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
   );
   const currentBreakpointSize: BreakpointSize = calculateBreakpointSize(width);
 
+  const canUseRegularTransition: Transition =
+    breakpointSize !== currentBreakpointSize
+      ? cancelTransition
+      : regularTransition;
+
   const [filterValue, setFilterValue] = useState<FilterListValues>('all');
   const [canChangeFilter, setCanChangeFilter] = useState<boolean>(false);
   const changeFilterValue = (newFilterValue: FilterListValues) => {
@@ -94,10 +99,7 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
                 : currentBreakpointSize === 'med'
                 ? 1500
                 : 900,
-            transition:
-              breakpointSize !== currentBreakpointSize
-                ? cancelTransition
-                : regularTransition,
+            transition: canUseRegularTransition,
           },
           react: {
             height:
@@ -106,10 +108,7 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
                 : currentBreakpointSize === 'med'
                 ? 600
                 : 600,
-            transition:
-              breakpointSize !== currentBreakpointSize
-                ? cancelTransition
-                : regularTransition,
+            transition: canUseRegularTransition,
           },
           frontend: {
             height:
@@ -118,10 +117,7 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
                 : currentBreakpointSize === 'med'
                 ? 900
                 : 600,
-            transition:
-              breakpointSize !== currentBreakpointSize
-                ? cancelTransition
-                : regularTransition,
+            transition: canUseRegularTransition,
           },
           backend: {
             height:
@@ -130,10 +126,7 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
                 : currentBreakpointSize === 'med'
                 ? 600
                 : 300,
-            transition:
-              breakpointSize !== currentBreakpointSize
-                ? cancelTransition
-                : regularTransition,
+            transition: canUseRegularTransition,
           },
         }}
         className={styles.galleryHeightAdjustment}
@@ -141,6 +134,7 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
         <div className={styles.galleryContainer}>
           <GalleryItem
             title="La Stalla At Stables"
+            subTitle="React / Next JS"
             img="/galleryImages/la_stalla_at_stables.jpg"
             filterValue={filterValue}
             variants={{
@@ -170,24 +164,35 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
           />
           <GalleryItem
             title="Tank Battle Game"
+            subTitle="JavaScript / HTML Canvas"
             img="/galleryImages/tank_battle_game.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: 0,
-                left: '33.33%',
+                top: currentBreakpointSize === 'small' ? '11.11%' : 0,
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '33.33%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
                 ...hideGalleryItemVariant,
                 transition: regularTransition,
               },
               frontend: {
-                top: 0,
-                left: '33.33%',
+                top: currentBreakpointSize === 'small' ? '11.11%' : 0,
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '33.33%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               backend: {
                 ...hideGalleryItemVariant,
@@ -197,14 +202,20 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
           />
           <GalleryItem
             title="Kings Chippy & Chinese Takeaway"
+            subTitle="Nodejs / HTML, CSS & JavaScript"
             img="/galleryImages/kings_chippy_chinese_takeaway.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: 0,
-                left: '66.66%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '22.22%'
+                    : currentBreakpointSize === 'med'
+                    ? '20%'
+                    : 0,
+                left: currentBreakpointSize === 'large' ? '66.66%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
                 ...hideGalleryItemVariant,
@@ -224,24 +235,35 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
           />
           <GalleryItem
             title="Ersatz BBC Website"
+            subTitle="HTML, CSS & JavaScript"
             img="/galleryImages/ersartz_bbc_website.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: '33.33%',
-                left: 0,
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '33.33%'
+                    : currentBreakpointSize === 'med'
+                    ? '20%'
+                    : '33.33%',
+                left: currentBreakpointSize === 'med' ? '50%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
                 ...hideGalleryItemVariant,
                 transition: regularTransition,
               },
               frontend: {
-                top: 0,
-                left: '66.66%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '22.22%'
+                    : currentBreakpointSize === 'med'
+                    ? '20%'
+                    : 0,
+                left: currentBreakpointSize === 'large' ? '66.66%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               backend: {
                 ...hideGalleryItemVariant,
@@ -251,24 +273,35 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
           />
           <GalleryItem
             title="Circus Game"
+            subTitle="JavaScript / HTML Canvas"
             img="/galleryImages/circus_game.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: '33.33%',
-                left: '33.33%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '44.44%'
+                    : currentBreakpointSize === 'med'
+                    ? '40%'
+                    : '33.33%',
+                left: currentBreakpointSize === 'large' ? '33.33%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
                 ...hideGalleryItemVariant,
                 transition: regularTransition,
               },
               frontend: {
-                top: '33.33%',
-                left: 0,
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '33.33%'
+                    : currentBreakpointSize === 'med'
+                    ? '20%'
+                    : '33.33%',
+                left: currentBreakpointSize === 'med' ? '50%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               backend: {
                 ...hideGalleryItemVariant,
@@ -278,26 +311,47 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
           />
           <GalleryItem
             title="Live Extreme Weather Tracker"
+            subTitle="React"
             img="/galleryImages/live_weather_tracker.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: '33.33%',
-                left: '66.66%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '55.55%'
+                    : currentBreakpointSize === 'med'
+                    ? '40%'
+                    : '33.33%',
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '66.66%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
-                top: 0,
-                left: '33.33%',
+                top: currentBreakpointSize === 'small' ? '11.11%' : 0,
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '33.33%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               frontend: {
-                top: '33.33%',
-                left: '33.33%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '44.44%'
+                    : currentBreakpointSize === 'med'
+                    ? '40%'
+                    : '33.33%',
+                left: currentBreakpointSize === 'large' ? '33.33%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               backend: {
                 ...hideGalleryItemVariant,
@@ -307,43 +361,65 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
           />
           <GalleryItem
             title="YouTube Style Comments System"
+            subTitle="React / Nodejs"
             img="/galleryImages/youtube_style_comments.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: '66.66%',
+                top: currentBreakpointSize === 'med' ? '60%' : '66.66%',
                 left: 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
-                top: '33.33%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '22.22%'
+                    : currentBreakpointSize === 'med'
+                    ? '20%'
+                    : '33.33%',
                 left: 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               frontend: {
                 ...hideGalleryItemVariant,
                 transition: regularTransition,
               },
               backend: {
-                top: 0,
-                left: '33.33%',
+                top: currentBreakpointSize === 'small' ? '11.11%' : 0,
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '33.33%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
             }}
           />
           <GalleryItem
             title="Typing Test Game"
+            subTitle="Nodejs / HTML, CSS & JavaScript"
             img="/galleryImages/typing_test.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: '66.66%',
-                left: '33.33%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '77.77%'
+                    : currentBreakpointSize === 'med'
+                    ? '60%'
+                    : '66.66%',
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '33.33%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
                 ...hideGalleryItemVariant,
@@ -354,35 +430,66 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
                 transition: regularTransition,
               },
               backend: {
-                top: 0,
-                left: '66.66%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '22.22%'
+                    : currentBreakpointSize === 'med'
+                    ? '20%'
+                    : 0,
+                left: currentBreakpointSize === 'large' ? '66.66%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
             }}
           />
           <GalleryItem
             title="Preference Finder Interactive Quiz"
+            subTitle="React / Framer Motion"
             img="/galleryImages/preference_finder.png"
             filterValue={filterValue}
             variants={{
               all: {
-                top: '66.66%',
-                left: '66.66%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '88.88%'
+                    : currentBreakpointSize === 'med'
+                    ? '80%'
+                    : '66.66%',
+                left: currentBreakpointSize === 'large' ? '66.66%' : 0,
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               react: {
-                top: 0,
-                left: '66.66%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '33.33%'
+                    : currentBreakpointSize === 'med'
+                    ? '20%'
+                    : 0,
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '66.66%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               frontend: {
-                top: '33.33%',
-                left: '66.66%',
+                top:
+                  currentBreakpointSize === 'small'
+                    ? '55.55%'
+                    : currentBreakpointSize === 'med'
+                    ? '40%'
+                    : '33.33%',
+                left:
+                  currentBreakpointSize === 'small'
+                    ? 0
+                    : currentBreakpointSize === 'med'
+                    ? '50%'
+                    : '66.66%',
                 ...showGalleryItemVariant,
-                transition: regularTransition,
+                transition: canUseRegularTransition,
               },
               backend: {
                 ...hideGalleryItemVariant,

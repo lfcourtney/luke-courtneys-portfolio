@@ -5,6 +5,7 @@ import styles from './GalleryItem.module.scss';
 
 interface GalleryItemProps {
   title: string;
+  subTitle: string;
   img: string;
   filterValue: FilterListValues;
   variants: GalleryItemVariants;
@@ -19,6 +20,7 @@ interface GalleryItemVariants extends Variants {
 
 export default function GalleryItem({
   title,
+  subTitle,
   img,
   filterValue,
   variants,
@@ -30,6 +32,14 @@ export default function GalleryItem({
       variants={variants}
       className={styles.galleryItem}
     >
+      <div className={styles.overlay}></div>
+      <div className={styles.contentContainer}>
+        <div className={styles.textContent}>
+          <h1 className={styles.header}>{title}</h1>
+          <p className={styles.paragraph}>{subTitle}</p>
+        </div>
+        <div className={styles.btn}>LEARN MORE</div>
+      </div>
       <img src={img} className={styles.image} alt={title} />
     </motion.div>
   );
