@@ -8,7 +8,7 @@ const OpenView = (): React.JSX.Element => {
       <div className={styles.containerChild}>
         <h1 className={styles.header}>Luke Courtney</h1>
         <hr className={styles.horizontalRule} />
-        <p className={styles.subHeader}>Portfolio</p>
+        <h2 className={styles.subHeader}>Portfolio</h2>
         <ScrollIntoView selector="#aboutSection">
           <i
             className={['fas', 'fa-chevron-down', styles.chevronDown].join(' ')}

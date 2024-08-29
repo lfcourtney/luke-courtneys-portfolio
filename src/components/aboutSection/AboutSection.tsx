@@ -44,7 +44,7 @@ export default function AboutSection() {
           },
         }}
       ></motion.div>
-      <motion.p
+      <motion.h2
         className={styles.subHeader}
         variants={{
           hidden: { opacity: 0 },
@@ -58,7 +58,7 @@ export default function AboutSection() {
         }}
       >
         Full Stack Developer
-      </motion.p>
+      </motion.h2>
       <motion.hr
         className={styles.horizontalRule}
         variants={{
