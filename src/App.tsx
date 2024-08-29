@@ -6,7 +6,7 @@ import ProjectsSection from './components/projectsSection/ProjectsSection';
 import ProjectsSectionModal from './components/projectsSection/ProjectsSectionModal';
 
 function App() {
-  const { projectsSectionModalInfo } = useModalOverflow();
+  useModalOverflow();
 
   return (
     <>
@@ -14,14 +14,7 @@ function App() {
       <NavBar />
       <AboutSection />
       <ProjectsSection />
-      {projectsSectionModalInfo && (
-        <ProjectsSectionModal
-          title={projectsSectionModalInfo.title}
-          link={projectsSectionModalInfo.link}
-          img={projectsSectionModalInfo.img}
-          text={projectsSectionModalInfo.text}
-        />
-      )}
+      <ProjectsSectionModal />
     </>
   );
 }

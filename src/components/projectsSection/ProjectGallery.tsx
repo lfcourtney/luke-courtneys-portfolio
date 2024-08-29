@@ -234,7 +234,7 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
             }}
           />
           <GalleryItem
-            title="Ersatz BBC Website"
+            title="Replica BBC Website"
             subTitle="HTML, CSS & JavaScript"
             img="/galleryImages/ersartz_bbc_website.png"
             filterValue={filterValue}

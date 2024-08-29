@@ -11,12 +11,7 @@ const OpenView = (): React.JSX.Element => {
         <p className={styles.subHeader}>Portfolio</p>
         <ScrollIntoView selector="#aboutSection">
           <i
-            className={[
-              'fas',
-              'fa-chevron-down',
-              'fa-4x',
-              styles.chevronDown,
-            ].join(' ')}
+            className={['fas', 'fa-chevron-down', styles.chevronDown].join(' ')}
           ></i>
         </ScrollIntoView>
       </div>

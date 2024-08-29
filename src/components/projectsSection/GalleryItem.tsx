@@ -4,6 +4,8 @@ import { motion, Variant, Variants } from 'framer-motion';
 import { FilterListValues } from './ProjectGallery';
 import styles from './GalleryItem.module.scss';
 
+import GALLERY_INFORMATION from '../../data/galleryItemData';
+
 interface GalleryItemProps {
   title: string;
   subTitle: string;
@@ -45,9 +47,9 @@ export default function GalleryItem({
           onClick={() =>
             setProjectsSectionModalInfo({
               title,
-              link: '',
+              link: GALLERY_INFORMATION[title].link,
               img,
-              text: '',
+              text: GALLERY_INFORMATION[title].text,
             })
           }
           className={styles.btn}

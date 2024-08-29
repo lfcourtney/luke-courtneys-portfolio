@@ -47,6 +47,16 @@
   color: #1a0dab;
 }
 
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px 20px 0 0;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+/* IMPORTANT. This media query is for height, not width */
 @media (max-height: 800px) {
   .modal {
     display: block;

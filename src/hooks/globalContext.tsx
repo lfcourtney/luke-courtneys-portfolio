@@ -1,11 +1,11 @@
 import React from 'react';
-import { ProjectsSectionModalProps } from '../components/projectsSection/ProjectsSectionModal';
+import { ProjectsSectionModalInfo } from '../components/projectsSection/ProjectsSectionModal';
 
 const globalContext = React.createContext<{
   width: number;
-  projectsSectionModalInfo?: ProjectsSectionModalProps;
+  projectsSectionModalInfo?: ProjectsSectionModalInfo;
   setProjectsSectionModalInfo: React.Dispatch<
-    React.SetStateAction<ProjectsSectionModalProps | undefined>
+    React.SetStateAction<ProjectsSectionModalInfo | undefined>
   >;
 }>({
   width: 0,

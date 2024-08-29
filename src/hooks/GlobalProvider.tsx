@@ -1,11 +1,11 @@
 import { ReactNode, useState } from 'react';
-import { ProjectsSectionModalProps } from '../components/projectsSection/ProjectsSectionModal';
+import { ProjectsSectionModalInfo } from '../components/projectsSection/ProjectsSectionModal';
 import globalContext from './globalContext';
 import useViewport from './useViewport';
 
 export default function GlobalProvider({ children }: { children: ReactNode }) {
   const [projectsSectionModalInfo, setProjectsSectionModalInfo] = useState<
-    ProjectsSectionModalProps | undefined
+    ProjectsSectionModalInfo | undefined
   >(undefined);
 
   const { width } = useViewport();
