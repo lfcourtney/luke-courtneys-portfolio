@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './MobileNavBar.module.scss';
+import ScrollIntoView from 'react-scroll-into-view';
 
 interface MobileNavBarProps {
   hamburgerOpen: boolean;
@@ -33,9 +34,24 @@ export default function MobileNavBar({
           >
             <div className={styles.mobileNavBarMenuContainer}>
               <ul>
-                <li className={styles.mobileNavBarListItem}>HOME</li>
-                <li className={styles.mobileNavBarListItem}>ABOUT</li>
-                <li className={styles.mobileNavBarListItem}>PROJECTS</li>
+                <ScrollIntoView
+                  selector="#openView"
+                  style={{ display: 'inline' }}
+                >
+                  <li className={styles.mobileNavBarListItem}>HOME</li>
+                </ScrollIntoView>
+                <ScrollIntoView
+                  selector="#aboutSection"
+                  style={{ display: 'inline' }}
+                >
+                  <li className={styles.mobileNavBarListItem}>ABOUT</li>
+                </ScrollIntoView>
+                <ScrollIntoView
+                  selector="#projectsSection"
+                  style={{ display: 'inline' }}
+                >
+                  <li className={styles.mobileNavBarListItem}>PROJECTS</li>
+                </ScrollIntoView>
                 <li className={styles.mobileNavBarListItem}>ABILITIES</li>
                 <li className={styles.mobileNavBarListItem}>CONTACT</li>
               </ul>

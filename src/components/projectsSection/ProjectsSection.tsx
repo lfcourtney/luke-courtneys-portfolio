@@ -16,6 +16,7 @@ export default function ProjectsSection() {
         animate={isInView ? 'show' : 'hidden'}
         ref={ref}
         className={styles.container}
+        id="projectsSection"
       >
         <motion.h1
           variants={{

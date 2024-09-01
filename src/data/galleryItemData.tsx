@@ -13,7 +13,7 @@ const GALLERY_INFORMATION: {
     text: 'Inspired by the popular online arcade game Tank Trouble, this game retains all the core mechanics of the original. A defining feature is its development using pure JavaScript and HTML5 canvas, without relying on any JavaScript frameworks. The game boasts smooth gameplay and real-time collision detection.',
   },
   'Kings Chippy & Chinese Takeaway': {
-    link: 'https://kingschippyandchinese.herokuapp.com/',
+    link: 'https://www.youtube.com/watch?v=Sumy8ZOkn58',
     text: 'Client project for a local Chinese takeaway. The website includes essential restaurant information and features an interactive menu, allowing users to customize their orders with preferred sides and sauces. Additionally, it integrates a fully functional payment and transaction system. (This website is no longer hosted).',
   },
   'Replica BBC Website': {
@@ -37,8 +37,8 @@ const GALLERY_INFORMATION: {
     text: 'This web-based speed typing game challenges players to type as many words as possible within 60 seconds. Words are randomly selected from a MySQL database containing the 1,000 most common words in the English language, facilitated by a Node.js backend. At the end of the game, players receive their average words-per-minute score.',
   },
   'Preference Finder Interactive Quiz': {
-    link: 'https://preference-finder.herokuapp.com/',
-    text: 'This React.js single-page application enables users to input a series of items based on any criteria. The objective is to create a ranked list from worst to best. Users answer a series of questions, comparing items and indicating their preferences. Upon completion, users receive an objective list ranked according to their choices. The user flow features smooth graphic transitions as users progress through the application.',
+    link: 'https://24fe4ddd.pereference-finder-interactive-quiz.pages.dev/',
+    text: 'This React.js single-page application enables users to input a series of items based on any criteria. Users answer a series of questions, comparing items and indicating their preferences. Upon completion, users receive an objective list ranked according to their choices. (The web application is a proof of concept, demonstrating a potential user story. It is not recommended to submit lists of more than five items as the algorithm used is inefficient; hence the number of comparisons made will become substantially larger past this point).',
   },
 };
 
