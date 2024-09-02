@@ -4,6 +4,7 @@ import NavBar from './components/navBar/NavBar';
 import AboutSection from './components/aboutSection/AboutSection';
 import ProjectsSection from './components/projectsSection/ProjectsSection';
 import ProjectsSectionModal from './components/projectsSection/ProjectsSectionModal';
+import ExperienceSection from './components/experienceSection/ExperienceSection';
 
 function App() {
   useModalOverflow();
@@ -14,6 +15,7 @@ function App() {
       <NavBar />
       <AboutSection />
       <ProjectsSection />
+      <ExperienceSection />
       <ProjectsSectionModal />
     </>
   );

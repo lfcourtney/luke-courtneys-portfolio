@@ -21,7 +21,7 @@ export default function DesktopNavBar() {
           >
             <li className={styles.desktopNavBarListItem}>PROJECTS</li>
           </ScrollIntoView>
-          <li className={styles.desktopNavBarListItem}>ABILITIES</li>
+          <li className={styles.desktopNavBarListItem}>EXPERIENCE</li>
           <li className={styles.desktopNavBarListItem}>CONTACT</li>
         </ul>
       </div>

@@ -38,6 +38,12 @@
   font-weight: bold;
 }
 
+@media (max-width: 500px) {
+  .header {
+    font-size: 3em;
+  }
+}
+
 @keyframes downChevronIdle {
   0% {
     transform: translateY(0);

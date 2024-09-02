@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import styles from './ProjectGallery.module.scss';
 import { motion, Transition, Variant } from 'framer-motion';
 import globalContext from '../../hooks/globalContext';
@@ -53,9 +53,9 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
       : regularTransition;
 
   const [filterValue, setFilterValue] = useState<FilterListValues>('all');
-  const [canChangeFilter, setCanChangeFilter] = useState<boolean>(false);
-  const changeFilterValue = (newFilterValue: FilterListValues) => {
-    if (canChangeFilter) {
+  const canChangeFilter = useRef<boolean>(false);
+  const changeFilterValue = (newFilterValue: FilterListValues): void => {
+    if (canChangeFilter.current) {
       setFilterValue(newFilterValue);
     }
   };
@@ -77,7 +77,7 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
       animate={{ opacity: isInView ? 1 : 0 }}
       onAnimationComplete={(definition: { opacity: number }) => {
         if (definition.opacity === 1) {
-          setCanChangeFilter(true);
+          canChangeFilter.current = true;
         }
       }}
     >
