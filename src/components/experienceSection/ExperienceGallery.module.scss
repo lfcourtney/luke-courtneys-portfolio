@@ -3,3 +3,9 @@
   width: 600px;
   position: relative;
 }
+
+@media (max-width: 616px) {
+  .filterContainer {
+    width: 370px;
+  }
+}

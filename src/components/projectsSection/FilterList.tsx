@@ -26,7 +26,7 @@ export default function FilterList({
   filterValue,
   changeFilterValue,
 }: FilterListInterface) {
-  const [changeWidthBreakpoint, setChangeWidthBreakpoint] = useState(
+  const [changeWidthBreakpoint, setChangeWidthBreakpoint] = useState<boolean>(
     width > MOBILE_BREAKPOINT
   );
 

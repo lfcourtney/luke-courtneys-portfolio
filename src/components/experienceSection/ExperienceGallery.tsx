@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import globalContext from '../../hooks/globalContext';
 import FilterList from './FilterList';
 import styles from './ExperienceGallery.module.scss';
 
 export type FilterListValues = 'experience' | 'education';
 
 export default function ExperienceGallery() {
+  const { width } = useContext(globalContext);
+
   const [filterValue, setFilterValue] =
     useState<FilterListValues>('experience');
 
@@ -16,6 +19,7 @@ export default function ExperienceGallery() {
     <>
       <div className={styles.filterContainer}>
         <FilterList
+          width={width}
           filterValue={filterValue}
           changeFilterValue={changeFilterValue}
         />

@@ -52,7 +52,12 @@ export default function MobileNavBar({
                 >
                   <li className={styles.mobileNavBarListItem}>PROJECTS</li>
                 </ScrollIntoView>
-                <li className={styles.mobileNavBarListItem}>EXPERIENCE</li>
+                <ScrollIntoView
+                  selector="#experienceSection"
+                  style={{ display: 'inline' }}
+                >
+                  <li className={styles.mobileNavBarListItem}>EXPERIENCE</li>
+                </ScrollIntoView>
                 <li className={styles.mobileNavBarListItem}>CONTACT</li>
               </ul>
             </div>
