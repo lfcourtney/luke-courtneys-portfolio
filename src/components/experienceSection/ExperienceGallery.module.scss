@@ -3,9 +3,61 @@
   width: 600px;
   position: relative;
 }
+.item {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.itemHeader {
+  font-size: 1.8rem;
+
+  small {
+    font-weight: normal;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.itemSubHeader {
+  margin-bottom: 5px;
+}
+
+.itemText {
+  color: #4d4d4d;
+}
+
+.galleryContainer {
+  height: 900px;
+  position: relative;
+}
+
+.itemContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 
 @media (max-width: 616px) {
   .filterContainer {
     width: 370px;
+  }
+
+  .itemHeader {
+    font-size: 1.5rem;
+
+    small {
+      font-size: 1rem;
+    }
+  }
+
+  .itemSubHeader {
+    font-size: 16px;
+  }
+
+  .itemText {
+    font-size: 16px;
   }
 }
