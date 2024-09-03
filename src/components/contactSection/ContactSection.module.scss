@@ -1,0 +1,67 @@
+.background {
+  background-color: #252934;
+  clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 140px;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.underline {
+  width: 90px;
+  height: 4px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.formTitle {
+  color: #4da6ff;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.form {
+  margin: 0 20px;
+  & > * {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &::placeholder {
+    color: white;
+    opacity: 0.7;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 5px 10px;
+    background-color: #1e242c;
+    outline: none;
+    border: none;
+    color: white;
+  }
+}
+
+.formSubmit {
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}

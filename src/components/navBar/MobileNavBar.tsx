@@ -58,7 +58,12 @@ export default function MobileNavBar({
                 >
                   <li className={styles.mobileNavBarListItem}>EXPERIENCE</li>
                 </ScrollIntoView>
-                <li className={styles.mobileNavBarListItem}>CONTACT</li>
+                <ScrollIntoView
+                  selector="#contactSection"
+                  style={{ display: 'inline' }}
+                >
+                  <li className={styles.mobileNavBarListItem}>CONTACT</li>
+                </ScrollIntoView>
               </ul>
             </div>
           </motion.div>

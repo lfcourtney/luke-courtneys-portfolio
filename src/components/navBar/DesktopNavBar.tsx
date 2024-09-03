@@ -27,7 +27,12 @@ export default function DesktopNavBar() {
           >
             <li className={styles.desktopNavBarListItem}>EXPERIENCE</li>
           </ScrollIntoView>
-          <li className={styles.desktopNavBarListItem}>CONTACT</li>
+          <ScrollIntoView
+            selector="#contactSection"
+            style={{ display: 'inline' }}
+          >
+            <li className={styles.desktopNavBarListItem}>CONTACT</li>
+          </ScrollIntoView>
         </ul>
       </div>
       <div className={styles.desktopNavBarFooter}></div>
