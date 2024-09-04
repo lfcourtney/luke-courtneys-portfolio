@@ -2,12 +2,15 @@ import { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';
 import styles from './ProjectsSection.module.scss';
 import ProjectGallery from './ProjectGallery';
+import useVisible from '../../hooks/useVisible';
 
 const DURATION_TIME: number = 0.5;
 
 export default function ProjectsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '0px 0px -50% 0px' });
+
+  useVisible({ reference: ref, navBarSection: 'projects' });
 
   return (
     <div className={styles.background}>

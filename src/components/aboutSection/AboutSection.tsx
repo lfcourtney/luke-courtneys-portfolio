@@ -1,12 +1,15 @@
 import styles from './AboutSection.module.scss';
 import { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';
+import useVisible from '../../hooks/useVisible';
 
 const DURATION_TIME: number = 0.5;
 
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '0px 0px -50% 0px' });
+
+  useVisible({ reference: ref, navBarSection: 'about' });
 
   return (
     <motion.div
