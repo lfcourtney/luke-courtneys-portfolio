@@ -59,7 +59,10 @@ export default function ProjectsSectionModal() {
                 </h1>
               </a>
               <p>{projectsSectionModalInfo.text}</p>
-              <i className={['fas', 'fa-times', styles.icon].join(' ')}></i>
+              <i
+                className={['fas', 'fa-times', styles.icon].join(' ')}
+                onClick={() => setProjectsSectionModalInfo(undefined)}
+              ></i>
             </div>
           </motion.div>
         </motion.div>

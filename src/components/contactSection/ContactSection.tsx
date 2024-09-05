@@ -1,15 +1,72 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useInView, motion } from 'framer-motion';
 import styles from './ContactSection.module.scss';
 import useVisible from '../../hooks/useVisible';
+import emailjs from 'emailjs-com';
 
 const DURATION_TIME: number = 0.5;
 
+const EMAIL_JS_PUBLIC_KEY = '4XXsi1j6DfylLcIYb';
+const EMAIL_JS_SERVICE_ID = 'service_ufztv2r';
+const EMAIL_JS_SERVICE_TEMPLATE_ID = 'template_0vlbk2d';
+
+interface EmailState {
+  success?: string;
+  error?: string;
+}
+
 export default function ContactSection() {
+  useEffect(() => emailjs.init(EMAIL_JS_PUBLIC_KEY), []);
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '0px 0px -50% 0px' });
 
   useVisible({ reference: ref, navBarSection: 'contact' });
+
+  const [emailState, setEmailState] = useState<EmailState>({
+    success: undefined,
+    error: undefined,
+  });
+
+  async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formElements = form.elements as typeof form.elements & {
+      name: { value: string };
+      subject: { value: string };
+      message: { value: string };
+    };
+
+    const templateParams = {
+      name: formElements.name.value,
+      subject: formElements.subject.value,
+      message: formElements.message.value,
+    };
+
+    setEmailState({
+      success: '',
+      error: '',
+    });
+
+    emailjs
+      .send(EMAIL_JS_SERVICE_ID, EMAIL_JS_SERVICE_TEMPLATE_ID, templateParams)
+      .then(
+        (response) => {
+          setEmailState((prevState) => ({
+            ...prevState,
+            success: response.text,
+          }));
+          form.reset();
+        },
+        (err) => {
+          setEmailState((prevState) => ({
+            ...prevState,
+            error: err,
+          }));
+          form.reset();
+        }
+      );
+  }
 
   return (
     <div className={styles.background}>
@@ -65,7 +122,16 @@ export default function ContactSection() {
         >
           Have a question or want to work together?
         </motion.p>
+        {emailState.success && (
+          <p className={styles.successMessage}>Success. The email was sent.</p>
+        )}
+        {emailState.error && (
+          <p className={styles.errorMessage}>
+            Error. There was an unexpected problem.
+          </p>
+        )}
         <motion.form
+          onSubmit={handleFormSubmit}
           variants={{
             hidden: { scale: 0 },
             show: {
@@ -81,14 +147,18 @@ export default function ContactSection() {
           autoComplete="off"
           className={styles.form}
         >
-          <input type="text" name="name" required placeholder="Name" />
-          <input type="text" name="subject" required placeholder="Subject" />
+          <input type="text" id="name" required placeholder="Name" />
+          <input type="text" id="subject" required placeholder="Subject" />
           <textarea
-            name="text"
+            id="message"
             placeholder="Enter Your Message Here"
           ></textarea>
           <button type="submit" className={styles.formSubmit}>
-            submit
+            {emailState.success === '' && emailState.error === '' ? (
+              <div className={styles.loader}></div>
+            ) : (
+              'submit'
+            )}
           </button>
         </motion.form>
       </motion.div>
