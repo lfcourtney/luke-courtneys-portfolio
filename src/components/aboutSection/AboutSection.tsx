@@ -93,12 +93,14 @@ export default function AboutSection() {
         <div className={styles.gridItem}>
           <h1>Profile</h1>
           <p>
-            Strong experience in JavaScript. Have got a YouTube channel which
-            focuses on the complex JavaScript side of web development. Videos on
-            the channel include NodeJS and React tutorials, as well as teaching
-            difficult data structures and algorithms in JavaScript. There are
-            also some HTML5 canvas game tutorials which teach Mathematical
-            concepts like physics engines and collision detection.
+            I am a final-year BSc Computer Science student at Aston University
+            with industry experience. During my placement year, I served as a
+            Placement Developer at Royal HaskoningDHV, where I was part of the
+            Witness team, focused on delivering predictive simulation and
+            optimization technology. In this role, I gained valuable experience
+            working within a Scrum team, contributing to various stages of the
+            Agile development process, including planning, analysis, design,
+            coding, unit testing and acceptance testing.
           </p>
         </div>
         <div className={styles.resumePhoto}></div>
