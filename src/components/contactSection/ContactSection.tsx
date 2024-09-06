@@ -30,6 +30,11 @@ export default function ContactSection() {
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (emailState.success === '' && emailState.error === '') {
+      return;
+    }
+
     const form = e.currentTarget;
     const formElements = form.elements as typeof form.elements & {
       name: { value: string };
