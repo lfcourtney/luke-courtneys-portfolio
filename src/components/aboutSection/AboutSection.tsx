@@ -93,14 +93,13 @@ export default function AboutSection() {
         <div className={styles.gridItem}>
           <h1>Profile</h1>
           <p>
-            I am a final-year BSc Computer Science student at Aston University
-            with industry experience. During my placement year, I served as a
-            Placement Developer at Royal HaskoningDHV, where I was part of the
-            Witness team, focused on delivering predictive simulation and
-            optimization technology. In this role, I gained valuable experience
-            working within a Scrum team, contributing to various stages of the
-            Agile development process, including planning, analysis, design,
-            coding, unit testing and acceptance testing.
+            A First Class BSc (Hons) Computer Science graduate from Aston
+            University with hands-on experience developing robust, cloud
+            services within a professional Scrum workflow. Collaborative and
+            self-motivated with strong stakeholder engagement skills,
+            incorporating stakeholder feedback to drive continuous improvement
+            as a cross-functional Scrum team member. Passionate about writing
+            clean, scalable code in fast-paced, collaborative environments.
           </p>
         </div>
         <div className={styles.resumePhoto}></div>

@@ -89,7 +89,8 @@
   There will be no flicker.*/
   background: url('/ResumePhoto.jpg');
   background-size: cover;
-  background-position: center;
+  /* -10% y-axis offset so that profile picture captures hair */
+  background-position: center -10px;
 }
 
 @media (max-width: 1300px) {
