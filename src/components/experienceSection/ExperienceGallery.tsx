@@ -125,7 +125,7 @@ export default function ExperienceGallery({ isInView }: { isInView: boolean }) {
                   Aston University <small>2021 - 2025</small>
                 </h1>
                 <p className={styles.itemSubHeader}>
-                  First-Class degree BSc (Hons) Computer Science
+                  First Class degree BSc (Hons) Computer Science
                 </p>
               </motion.div>
               <motion.div
