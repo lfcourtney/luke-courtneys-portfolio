@@ -42,6 +42,13 @@ export type FilterListValues = 'all' | 'react' | 'frontend' | 'backend';
 
 export default function ProjectGallery({ isInView }: { isInView: boolean }) {
   const { width } = useContext(globalContext);
+
+  // The 'breakpoint' settings are related to viewport width. That is
+  // why this information can be used to cancel the transition of the elements
+  // via the 'canUseRegularTransition' variable: if, via the 'breakpoint' information,
+  // it is discovered that a new configuration of elements is needed, the animation will
+  // be cancelled. This is how the application simulates the effect of moving from one set of
+  // styles to another, as if CSS media queries were utilised to achieve this effect.
   const [breakpointSize, setBreakpointSize] = useState<BreakpointSize>(
     calculateBreakpointSize(width)
   );
@@ -53,6 +60,12 @@ export default function ProjectGallery({ isInView }: { isInView: boolean }) {
       : regularTransition;
 
   const [filterValue, setFilterValue] = useState<FilterListValues>('all');
+
+  /**
+   * Relevant information to changing the filter value, which determines the category of
+   * items shown by the gallery view. The 'canChangeFilter' boolean is set to record whether the
+   * filter view has animated into existence and hence the user can interact with the filter view, changing its values.
+   */
   const canChangeFilter = useRef<boolean>(false);
   const changeFilterValue = (newFilterValue: FilterListValues): void => {
     if (canChangeFilter.current) {

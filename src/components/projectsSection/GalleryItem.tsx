@@ -4,6 +4,7 @@ import { motion, Variant, Variants } from 'framer-motion';
 import { FilterListValues } from './ProjectGallery';
 import styles from './GalleryItem.module.scss';
 
+// Use Gallery Information from external location
 import GALLERY_INFORMATION from '../../data/galleryItemData';
 
 interface GalleryItemProps {

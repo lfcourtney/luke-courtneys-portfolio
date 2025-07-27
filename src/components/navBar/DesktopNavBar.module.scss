@@ -7,7 +7,7 @@
   z-index: 3;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1300px) or (max-height: 650px) {
   .desktopNavBar {
     position: relative;
   }

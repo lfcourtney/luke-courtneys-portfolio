@@ -8,6 +8,11 @@ export type NavBarSections =
   | 'experience'
   | 'contact';
 
+/**
+ * Hook used to attach intersection observer to main elements of portfolio.
+ * This allows the navbar to be able to highlight the relevant section when the corresponding
+ * elements have scrolled into view, with the intersection observer detecting when this has happened.
+ */
 export default function useVisible({
   reference,
   navBarSection,

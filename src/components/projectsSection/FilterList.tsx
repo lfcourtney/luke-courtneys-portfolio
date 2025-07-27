@@ -21,6 +21,9 @@ interface FilterListInterface {
 
 const MOBILE_BREAKPOINT: number = 616;
 
+/**
+ * Child of ProjectGallery component. Is the interactive element that allows the user to select the different categories.
+ */
 export default function FilterList({
   width,
   filterValue,

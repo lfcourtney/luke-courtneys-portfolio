@@ -7,3 +7,7 @@ This is my portfolio website, a replica of my [old portfolio](https://github.com
 1. `npm install`
 1. `npm run dev` and play with the local dev environment.
 1. `npm run build`.
+
+# Update
+
+1. Run `npm update` every so often; this ensures that packages are kept up to date.

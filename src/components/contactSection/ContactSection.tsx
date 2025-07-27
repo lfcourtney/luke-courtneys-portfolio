@@ -7,7 +7,7 @@ import emailjs from 'emailjs-com';
 const DURATION_TIME: number = 0.5;
 
 const EMAIL_JS_PUBLIC_KEY = '4XXsi1j6DfylLcIYb';
-const EMAIL_JS_SERVICE_ID = 'service_ufztv2r';
+const EMAIL_JS_SERVICE_ID = 'service_l1jf209';
 const EMAIL_JS_SERVICE_TEMPLATE_ID = 'template_0vlbk2d';
 
 interface EmailState {
@@ -66,7 +66,7 @@ export default function ContactSection() {
         (err) => {
           setEmailState((prevState) => ({
             ...prevState,
-            error: err,
+            error: err.text,
           }));
           form.reset();
         }
@@ -131,9 +131,12 @@ export default function ContactSection() {
           <p className={styles.successMessage}>Success. The email was sent.</p>
         )}
         {emailState.error && (
-          <p className={styles.errorMessage}>
-            Error. There was an unexpected problem.
-          </p>
+          <>
+            <p className={styles.errorMessage}>
+              Error. There was an unexpected problem.
+            </p>
+            <p className={styles.errorMessage}>{emailState.error}</p>
+          </>
         )}
         <motion.form
           onSubmit={handleFormSubmit}
