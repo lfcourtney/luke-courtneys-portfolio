@@ -11,3 +11,11 @@ This is my portfolio website, a replica of my [old portfolio](https://github.com
 # Update
 
 1. Run `npm update` every so often; this ensures that packages are kept up to date.
+
+# Build
+
+1. Run `npm run build`. Output directory is `dist`.
+
+# Deployed Website
+
+Visit [https://luke-courtneys-portfolio.pages.dev/](https://luke-courtneys-portfolio.pages.dev/) for deployed website. This is deployed via free Cloudflare Pages hosting.

@@ -1,5 +1,5 @@
 import globalContext from './globalContext';
-import { useEffect, MutableRefObject, useContext } from 'react';
+import { useEffect, useContext, RefObject } from 'react';
 
 export type NavBarSections =
   | 'home'
@@ -17,7 +17,7 @@ export default function useVisible({
   reference,
   navBarSection,
 }: {
-  reference: MutableRefObject<HTMLElement | null>;
+  reference: RefObject<HTMLElement | null>;
   navBarSection: NavBarSections;
 }) {
   const { changeNavBarCurrentSection } = useContext(globalContext);

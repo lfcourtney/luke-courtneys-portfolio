@@ -19,3 +19,9 @@ $hamburgerGap: 6px;
   border-radius: 2px;
   transform-origin: left center;
 }
+
+.hamburgerMenu,
+.hamburgerMenuTop,
+.hamburgerMenuBottom {
+  --darkreader-background-ffffff: white !important;
+}
